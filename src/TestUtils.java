@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Random;
 
-public class Test {
+public class TestUtils {
     public static boolean equals(double[][] mas, double[][] mas1) {
         try {
             for (int i = 0; i < mas.length; i++) {

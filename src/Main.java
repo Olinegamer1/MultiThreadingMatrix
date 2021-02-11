@@ -3,8 +3,8 @@ import org.apache.commons.math3.linear.RealMatrix;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        double[][] matrixA = Test.getRandomData(1000);
-        double[][] matrixB = Test.getRandomData(1000);
+        double[][] matrixA = TestUtils.getRandomData(1000);
+        double[][] matrixB = TestUtils.getRandomData(1000);
 
         Matrix leftMatrix = new Matrix(matrixA);
         Matrix rightMatrix = new Matrix(matrixB);
@@ -17,7 +17,7 @@ public class Main {
         System.out.println(System.currentTimeMillis() - l);
         double[][] result1 = realMatrix.multiply(realMatrix1).getData();
 
-        System.out.println(Test.equals(result, result1));
+        System.out.println(TestUtils.equals(result, result1));
     }
 }
 
