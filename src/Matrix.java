@@ -7,7 +7,7 @@ public class Matrix {
     private static final String NO_ONE_COLUMN = "Matrix hasn't column";
     private static final String INCORRECT_MATRIX = "Incorrect matrix";
     private static final String DIFFERENT_DIMENSION  = "Column and Row has different dimensions";
-    private static final String INCORRECT_COUNT_THREADS = "Count of threads can't be below zero";
+    private static final String INCORRECT_COUNT_THREADS = "Count of threads can't be below 1";
     private static CountDownLatch latch;
     private double[][] data;
     private double[][] outputData;

@@ -14,8 +14,8 @@ public class Test {
             return true;
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Разные размеры массивов");
+            return false;
         }
-        return false;
     }
 
     public static void print (double[][] mas) {
@@ -32,5 +32,4 @@ public class Test {
         }
         return outputData;
     }
-
 }
