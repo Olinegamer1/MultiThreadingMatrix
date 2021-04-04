@@ -48,24 +48,10 @@ public class Matrix {
 
         Thread[] threads = new Thread[threadCount];
 
-        int step = getStep(threadCount);
-        int start = 0;
-        int end = step;
-
         for (int i = 0; i < threadCount; i++) {
-            if (i + 1 >= threadCount) {
-                end = this.getRowDimension();
-            }
-            threads[i] = new Multithreading(start, end, this, matrix, outputData, latch);
-            start += step;
-            end += step;
+            threads[i] = new Multithreading(i, threadCount, this, matrix, outputData, latch);
         }
         return threads;
-    }
-
-    private int getStep(int threadCount) {
-        int step = this.getRowDimension() / threadCount;
-        return step == 0 ? this.getRowDimension() : step;
     }
 
     private void checkMultiplication(Matrix matrixLeft, Matrix matrixRight) {
