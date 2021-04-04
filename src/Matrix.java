@@ -32,7 +32,7 @@ public class Matrix {
         return new double[rows][columns];
     }
 
-    private void launchThreading (Thread[] threads) {
+    private void launchThreading(Thread[] threads) {
         for (Thread thread : threads) {
             thread.start();
         }
@@ -60,18 +60,12 @@ public class Matrix {
             start += step;
             end += step;
         }
-
         return threads;
-
     }
 
     private int getStep(int threadCount) {
         int step = this.getRowDimension() / threadCount;
-        if (step == 0) {
-            return  this.getRowDimension();
-        } else {
-            return step;
-        }
+        return step == 0 ? this.getRowDimension() : step;
     }
 
     private void checkMultiplication(Matrix matrixLeft, Matrix matrixRight) {
@@ -103,7 +97,6 @@ public class Matrix {
         }
 
         int rows = data.length;
-
         this.data = new double[rows][columns];
 
         for (int i = 0; i < this.data.length; ++i) {
@@ -113,7 +106,6 @@ public class Matrix {
 
             System.arraycopy(data[i], 0, this.data[i], 0, columns);
         }
-
     }
 
     @Override
